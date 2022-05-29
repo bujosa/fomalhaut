@@ -4,7 +4,9 @@ import csv
 import xlsxwriter
 import pandas as pd
 
-workbook = xlsxwriter.Workbook('roi_calculate.xlsx')
+from core.util import eliminate_commas
+
+workbook = xlsxwriter.Workbook('./result/roi_calculate.xlsx')
 worksheet = workbook.add_worksheet()
 
 df = pd.read_csv('./dataset/dataset.csv', on_bad_lines='skip', engine ='python')
@@ -18,7 +20,7 @@ for index, row in df.iterrows():
     if row.year != 1990:
         continue
 
-    roi = (row.revenue - row.budget) / row.budget
+    roi = (int(eliminate_commas(row.revenue)) - int(eliminate_commas(row.budget))) / int(eliminate_commas(row.budget))
 
     worksheet.write(line_count,0, row.title)
 
@@ -26,9 +28,10 @@ for index, row in df.iterrows():
 
     worksheet.write(line_count,2, row.budget)
 
-    worksheet.write(line_count,5, row.roi)
+    worksheet.write(line_count,3, roi)
 
     line_count+=1
 
 
 workbook.close()
+
