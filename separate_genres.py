@@ -4,7 +4,7 @@ import csv
 import xlsxwriter
 import pandas as pd
 
-workbook = xlsxwriter.Workbook('separateGenres.xlsx')
+workbook = xlsxwriter.Workbook('./result/separateGenres.xlsx')
 worksheet = workbook.add_worksheet()
 
 df = pd.read_csv('./dataset/dataset.csv', on_bad_lines='skip', engine ='python')
