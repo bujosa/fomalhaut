@@ -1,6 +1,3 @@
-
-# Read de dataset in format csv, and split Production Countries by , and return new dataset in format xlsx
-import csv
 import xlsxwriter
 import pandas as pd
 
