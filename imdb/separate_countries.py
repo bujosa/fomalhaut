@@ -4,7 +4,7 @@ import csv
 import xlsxwriter
 import pandas as pd
 
-workbook = xlsxwriter.Workbook('./result/separateCountries.xlsx')
+workbook = xlsxwriter.Workbook('./result/separateCountriesAndYear.xlsx')
 worksheet = workbook.add_worksheet()
 
 df = pd.read_csv('./dataset/dataset.csv', on_bad_lines='skip', engine ='python')
@@ -25,6 +25,7 @@ for index, row in df.iterrows():
         worksheet.write(line_count,6, row.revenue),
         worksheet.write(line_count,7, row.popularity),
         worksheet.write(line_count,8, row.voteAverage),
+        worksheet.write(line_count,9, str(row.year)+'-01-01'),
         line_count+=1
 
 workbook.close()

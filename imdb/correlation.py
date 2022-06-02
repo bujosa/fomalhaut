@@ -15,6 +15,7 @@ for index, row in df.iterrows():
      row.budget,
      row.popularity,
      row.voteAverage,
+     row.year
     ]) 
 
 # Display correlation between revenue and budget with a scatter plot using panda
@@ -64,4 +65,21 @@ def display_correlation_revenue_voteAverage(newDataset):
 
     plt.show()
 
-display_correlation_popularity_voteAverage(newDataset)
+# Display correlation between year and budget with a scatter plot using panda
+def display_correlation_year_budget(newDataset):
+    year = []
+    budget = []
+    for i in range(len(newDataset)):
+        year.append(newDataset[i][5])
+        budget.append(newDataset[i][2])
+
+    # Create scatter plot
+    scatter_plot = pd.DataFrame({'Year': year, 'Budget': budget})
+    scatter_plot.plot(kind='scatter', x='Year', y='Budget', figsize=(10, 10), alpha=0.8)
+
+    print('Correlación Pearson: ', df['budget'].corr(df['year'], method='pearson'))
+
+    plt.show()
+
+
+display_correlation_year_budget(newDataset)
