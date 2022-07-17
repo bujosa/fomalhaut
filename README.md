@@ -5,5 +5,5 @@ This is a python project about cleaning data
 Python
 
 ## Datasets
-IMDB
-Netflix
+- IMDB
+- Netflix
