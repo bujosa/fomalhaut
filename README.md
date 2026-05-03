@@ -1,9 +1,27 @@
 # Fomalhaut
-This is a python project about cleaning data 
 
-## Languages
-Python
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
-## Datasets
-- IMDB
-- Netflix
+> This is a python project about cleaning data.
+
+## Overview
+
+**Primary language:** Python
+
+## Getting Started
+
+```bash
+git clone https://github.com/bujosa/fomalhaut.git
+cd fomalhaut
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+python main.py
+```
+
+## Status
+
+Open source. Contributions and feedback welcome.
+
+## License
+
+See [LICENSE](LICENSE) if present, otherwise all rights reserved © 2022 bujosa.
